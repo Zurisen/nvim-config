@@ -2,7 +2,7 @@
 
 Personal Neovim config for C#, Python and TypeScript development on Windows.
 Built on [lazy.nvim](https://github.com/folke/lazy.nvim) with the
-[Dracula](https://github.com/Mofiqul/dracula.nvim) theme (as in VS Code).
+[Dracula](https://github.com/Mofiqul/dracula.nvim) theme.
 
 ## What's included
 
