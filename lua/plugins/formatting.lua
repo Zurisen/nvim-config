@@ -1,7 +1,7 @@
--- Formatting on save, using the formatters Mason installs (see lsp.lua).
+-- Formatting on demand (<leader>cf), using the formatters Mason installs (see
+-- lsp.lua). Never on save: reformatting whole files adds unrelated git changes.
 return {
   "stevearc/conform.nvim",
-  event = "BufWritePre",
   cmd = "ConformInfo",
   keys = {
     {
@@ -23,14 +23,5 @@ return {
       json = { "prettierd" },
       lua = { "stylua" },
     },
-    -- Fall back to the language server's formatter when none is listed above.
-    -- Except XML/XAML: lemminx would reformat the team's XAML on every save
-    -- (including the auto-save when switching to Claude). <leader>cf still works.
-    format_on_save = function(buf)
-      if vim.bo[buf].filetype == "xml" then
-        return
-      end
-      return { timeout_ms = 1000, lsp_format = "fallback" }
-    end,
   },
 }

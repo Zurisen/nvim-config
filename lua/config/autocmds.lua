@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- Save edited files when you switch to Claude, a terminal or lazygit, or when
 -- Neovim loses focus. Claude edits files on disk, so it then works on your
 -- latest code, and the reload below brings both your edits and Claude's into
--- the buffer (like VS Code saving before Claude edits). Format-on-save runs too.
+-- the buffer (like VS Code saving before Claude edits).
 local function save_modified_files()
   for _, buf in ipairs(vim.api.nvim_list_bufs()) do
     if vim.bo[buf].modified and vim.bo[buf].buftype == "" and vim.bo[buf].modifiable

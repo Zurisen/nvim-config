@@ -11,7 +11,7 @@ Built on [lazy.nvim](https://github.com/folke/lazy.nvim) with the
 | LSP         | roslyn.nvim (C#), basedpyright + ruff (Python), vtsls (TypeScript), lua_ls |
 | Completion  | blink.cmp + friendly-snippets                                        |
 | Syntax      | nvim-treesitter (`main` branch)                                      |
-| Formatting  | conform.nvim — csharpier, ruff, prettierd, stylua (format on save)   |
+| Formatting  | conform.nvim — csharpier, ruff, prettierd, stylua (on demand, `<leader>cf`; never on save) |
 | Debugging   | nvim-dap + dap-ui — netcoredbg, debugpy, js-debug                    |
 | Testing     | neotest — vstest, pytest, vitest, jest *(work in progress)*          |
 | AI          | claude-chat.nvim — Claude Code sidebar with IDE + LSP integration    |

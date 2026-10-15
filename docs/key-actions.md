@@ -75,7 +75,7 @@ In the explorer popup (`Space e`): `Enter` opens a file (and closes the popup),
 | `Space s s` / `Space s S` | Search symbols in this file / the whole workspace |
 | `grn` (or `Space c r`) | Rename symbol everywhere |
 | `gra` (or `Space c a`) | Code actions (quick fixes, refactorings) |
-| `Space c f` | Format the file |
+| `Space c f` | Format the whole file (only when you ask: saving never reformats) |
 | `]d` / `[d` | Next / previous error or warning |
 | `Space c d` | Show the error under the cursor |
 | `Space s d` | Search all errors and warnings |
