@@ -1,0 +1,2 @@
+# The global gitignore excludes "Docs/"; this repo's docs/ should be tracked.
+!docs/

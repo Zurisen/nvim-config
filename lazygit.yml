@@ -1,0 +1,48 @@
+# lazygit settings used when lazygit is opened from Neovim (<leader>gg).
+# Loaded via LG_CONFIG_FILE in lua/plugins/terminal.lua, so it does not
+# affect lazygit started on its own.
+
+gui:
+  nerdFontsVersion: "3" # file icons (JetBrainsMono Nerd Font)
+  border: rounded
+  # Dracula colours (from github.com/dracula/lazygit), except the selection:
+  # Dracula's own selection grey (#44475A) instead of the theme's #6272A4, to
+  # keep it subtle (the default is the terminal's bright ANSI blue).
+  theme:
+    activeBorderColor:
+      - "#FF79C6"
+      - "bold"
+    inactiveBorderColor:
+      - "#BD93F9"
+    searchingActiveBorderColor:
+      - "#8BE9FD"
+      - "bold"
+    optionsTextColor:
+      - "#6272A4"
+    selectedLineBgColor:
+      - "#44475A"
+    inactiveViewSelectedLineBgColor:
+      - "bold"
+    cherryPickedCommitFgColor:
+      - "#6272A4"
+    cherryPickedCommitBgColor:
+      - "#8BE9FD"
+    markedBaseCommitFgColor:
+      - "#8BE9FD"
+    markedBaseCommitBgColor:
+      - "#F1FA8C"
+    unstagedChangesColor:
+      - "#FF5555"
+    defaultFgColor:
+      - "#F8F8F2"
+
+os:
+  # `e` on a file: hide the lazygit window and open the file in this Neovim.
+  # lazygit runs these through cmd.exe on Windows; %NVIM% is set by Neovim for
+  # its terminals. The first call is synchronous, so the float is gone before
+  # the file is opened.
+  edit: 'nvim --server %NVIM% --remote-expr "v:lua.LazygitHide()" && nvim --server %NVIM% --remote {{filename}}'
+  editAtLine: 'nvim --server %NVIM% --remote-expr "v:lua.LazygitHide()" && nvim --server %NVIM% --remote {{filename}} && nvim --server %NVIM% --remote-expr "v:lua.LazygitGoto({{line}})"'
+  # Used when lazygit must wait for the editor (e.g. editing a commit message).
+  editAtLineAndWait: "nvim +{{line}} {{filename}}"
+  editInTerminal: false
